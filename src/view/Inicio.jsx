@@ -8,14 +8,17 @@ const Inicio = () => {
   return (
 
    <>
-   <Container>
+   <Container className="container-inicio d-flex flex-column justify-content-space-around">
      
-     <Container className="container-login d-flex flex-column justify-content-space-around">
-     <Container >
+     
+     <Container className='container-navbar-inicio'>
           <NavbarInicio/>
-          </Container>
+      </Container>
+
+          <Container >
            pagina inicio
-          </Container>    
+          </Container>   
+
             </Container>
        
    </>

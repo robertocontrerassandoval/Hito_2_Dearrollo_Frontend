@@ -52,7 +52,7 @@ function Agregar() {
   </Form.Group>
 <Container className='d-flex justify-content-center'>
 <Button  variant="primary" type="submit">
-    Registrar
+    Agregar
   </Button>
 
 </Container>

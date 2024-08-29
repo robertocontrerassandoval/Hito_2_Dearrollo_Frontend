@@ -9,7 +9,7 @@ function NavbarInicio() {
     <Navbar className="navbar-inicio" bg="white" variant="light" expand="lg">
     <Container>
 
-        <Container style={{ maxWidth: '200px', width: '100%' }}>
+        <Container style={{ maxWidth: '150px', width: '100%' }}>
         <Navbar.Brand className="ml-auto">
         <img
           src={logo}
@@ -44,7 +44,7 @@ function NavbarInicio() {
 
     
       <Navbar.Brand className="mr-auto">
-        <Link to="/agragar" className="btn btn-primary mr-2">Agregar Productos</Link>
+        <Link to="/agregar" className="btn btn-primary mr-2">Agregar Productos</Link>
       </Navbar.Brand>
 
       <Navbar.Brand className="mr-auto">
