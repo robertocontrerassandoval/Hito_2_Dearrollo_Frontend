@@ -54,7 +54,7 @@ function Home() {
         <Form.Control type="number" placeholder="Ingresar fecha nacimiento" />
       </Form.Group>
 <Container className='d-flex justify-content-center'>
-<Button  variant="primary" type="submit">
+<Button  variant="dark" type="submit">
         Registrar
       </Button>
 </Container>
