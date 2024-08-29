@@ -2,7 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Navbar, Container } from 'react-bootstrap';
-import logo from '../img/logo.jpeg';
+import logo from '../img/logo.png';
 
 function NavbarAgregar() {
   return (
