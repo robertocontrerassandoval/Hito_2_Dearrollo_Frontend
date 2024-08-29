@@ -1,3 +1,23 @@
+body {
+  background-image: url('./img/hojas.jpg'); /* Cambia la ruta a la imagen que quieras usar */
+  background-size: cover; /* Ajusta el tamaño de la imagen para cubrir todo el contenedor */
+  font-family: "Montserrat", sans-serif;
+  text-align: justify;
+  
+  h1 {
+    color: #128D37;
+    font-weight: 700;
+  }
+  
+  p {
+    color: #128D37;
+    font-size: 1.25rem;
+  }
+  };
+ 
+  h1 {
+    color: #128D37;
+  }
 
 
   .btn-primary {
@@ -12,7 +32,7 @@
     display: flex; /* Usa Flexbox para centrar el contenido */
     justify-content: center; /* Centra el contenido horizontalmente */
     align-items: center; /* Centra el contenido verticalmente */
-    background-image: url('./img/hojas.jpg'); /* Cambia la ruta a la imagen que quieras usar */
+    /*background-image: url('./img/hojas.jpg'); /* Cambia la ruta a la imagen que quieras usar */
     background-size: cover; /* Ajusta el tamaño de la imagen para cubrir todo el contenedor */
     background-position: center; /* Centra la imagen */
     background-repeat: no-repeat; /* Evita que la imagen se repita */
@@ -55,7 +75,7 @@
   display: flex; /* Usa Flexbox para centrar el contenido */
   justify-content: space-around; /* Centra el contenido horizontalmente */
   align-items: center; /* Centra el contenido verticalmente */
-  background-image: url('./img/hojas.jpg'); /* Cambia la ruta a la imagen que quieras usar */
+  /*background-image: url('./img/hojas.jpg'); /* Cambia la ruta a la imagen que quieras usar */
   background-size: cover; /* Ajusta el tamaño de la imagen para cubrir todo el contenedor */
   background-position: center; /* Centra la imagen */
   background-repeat: no-repeat; /* Evita que la imagen se repita */
@@ -92,7 +112,7 @@
   display: flex; /* Usa Flexbox para centrar el contenido */
   justify-content: space-around; /* Centra el contenido horizontalmente */
   align-items: center; /* Centra el contenido verticalmente */
-  background-image: url('./img/hojas.jpg'); /* Cambia la ruta a la imagen que quieras usar */
+  /*background-image: url('./img/hojas.jpg'); /* Cambia la ruta a la imagen que quieras usar */
   background-size: cover; /* Ajusta el tamaño de la imagen para cubrir todo el contenedor */
   background-position: center; /* Centra la imagen */
   background-repeat: no-repeat; /* Evita que la imagen se repita */
@@ -138,7 +158,7 @@
   display: flex; /* Usa Flexbox para centrar el contenido */
   justify-content: space-around; /* Centra el contenido horizontalmente */
   align-items: center; /* Centra el contenido verticalmente */
-  background-image: url('./img/hojas.jpg'); /* Cambia la ruta a la imagen que quieras usar */
+  /*background-image: url('./img/hojas.jpg'); /* Cambia la ruta a la imagen que quieras usar */
   background-size: cover; /* Ajusta el tamaño de la imagen para cubrir todo el contenedor */
   background-position: center; /* Centra la imagen */
   background-repeat: no-repeat; /* Evita que la imagen se repita */
