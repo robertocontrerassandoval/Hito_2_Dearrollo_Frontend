@@ -15,6 +15,8 @@ const Inicio = () => {
           <NavbarInicio/>
       </Container>
 
+      
+
           <Container >
            pagina inicio
           </Container>   
