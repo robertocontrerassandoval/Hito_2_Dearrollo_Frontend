@@ -1,7 +1,7 @@
 import React from 'react';
 import { Card, Col, Row, Container } from 'react-bootstrap';
 
-const Producto = ({ productos }) => {
+const CrearProducto = ({ productos }) => {
   return (
     <Container className="d-flex flex-column align-items-center">
       <Row>
@@ -29,4 +29,4 @@ const Producto = ({ productos }) => {
   );
 }
 
-export default Producto;
+export default CrearProducto;
