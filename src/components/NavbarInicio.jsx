@@ -25,7 +25,7 @@ function NavbarInicio() {
         <Nav defaultActiveKey="/inicio" as="ul">
      
       <Nav.Item as="li">
-        <Nav.Link eventKey="inicio" t>Inicio</Nav.Link>
+        <Nav.Link eventKey="inicio" >Inicio</Nav.Link>
       </Nav.Item>
       <Nav.Item as="li" >
         <Nav.Link href="productos">Productos</Nav.Link>
