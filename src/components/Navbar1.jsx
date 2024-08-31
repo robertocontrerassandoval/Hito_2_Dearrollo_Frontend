@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { Link } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -7,8 +8,8 @@ import logo from '../img/logo.png';
 const CustomNavbar = () => {
   return (
     <Navbar bg="white" variant="light" expand="lg">
-      <Container>
-      <Navbar.Brand className="ml-auto">
+      <Container className="d-flex justify-content-between">
+        <Navbar.Brand>
           <img
             src={logo}
             alt="Logo"
@@ -16,9 +17,9 @@ const CustomNavbar = () => {
             style={{ height: '50px' }}
           />
         </Navbar.Brand>
-        <Navbar.Brand className="mr-auto">
-          <Link to="/login" className="btn btn-primary mr-2">Inicio de sesión</Link>
-        </Navbar.Brand>
+        <Link to="/login" className="btn btn-primary">
+          Inicio de sesión
+        </Link>
       </Container>
     </Navbar>
   );
