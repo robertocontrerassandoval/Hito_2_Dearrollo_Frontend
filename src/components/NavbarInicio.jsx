@@ -22,24 +22,21 @@ function NavbarInicio() {
          
     
         <Container>
-        <Nav defaultActiveKey="/inicio" as="ul">
-     
-      <Nav.Item as="li">
-        <Nav.Link eventKey="inicio" >Inicio</Nav.Link>
-      </Nav.Item>
-      <Nav.Item as="li" >
-        <Nav.Link href="productos">Productos</Nav.Link>
-      </Nav.Item>
-      <Nav.Item as="li">
-        <Nav.Link href="favoritos">Favoritos</Nav.Link>
-      </Nav.Item>
-      <Nav.Item as="li">
-        <Nav.Link href="perfil">Mi Perfil</Nav.Link>
-      </Nav.Item>
-    </Nav>
-  
-
-        </Container>
+      <Nav defaultActiveKey="/inicio" as="ul">
+        <Nav.Item as="li">
+          <Nav.Link as={Link} to="/inicio">Inicio</Nav.Link>
+        </Nav.Item>
+        <Nav.Item as="li">
+          <Nav.Link as={Link} to="/productos">Productos</Nav.Link>
+        </Nav.Item>
+        <Nav.Item as="li">
+          <Nav.Link as={Link} to="/favoritos">Favoritos</Nav.Link>
+        </Nav.Item>
+        <Nav.Item as="li">
+          <Nav.Link as={Link} to="/perfil">Mi Perfil</Nav.Link>
+        </Nav.Item>
+      </Nav>
+    </Container>
 
 
     
