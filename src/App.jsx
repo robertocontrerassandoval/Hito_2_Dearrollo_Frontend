@@ -8,12 +8,12 @@ import Inicio from './view/Inicio';
 import Favoritos from './view/Favoritos';
 import Perfil from './view/Perfil';
 import Productos from './view/Productos';
-
+import { AppProvider } from './context/AppContext';
 
 const App = () => {
   return (
     <>
-     
+     <AppProvider>
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/login" element={<Login />} />
@@ -25,7 +25,7 @@ const App = () => {
         <Route path="*" element={<Home />} />
       
       </Routes>
-   
+     </AppProvider>
     </>
     
   );
