@@ -38,6 +38,7 @@ export const AppProvider = ({ children }) => {
     <AppContext.Provider
       value={{
         user,
+        setUser,
         productos,
         favoritos,
         addProducto,
