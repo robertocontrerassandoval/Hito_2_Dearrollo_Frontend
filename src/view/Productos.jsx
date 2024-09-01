@@ -20,7 +20,7 @@ const Productos =() => {
       
 
           <Container >
-           pagina productos
+           pagina inicio
           </Container>   
 
             </Container>

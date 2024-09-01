@@ -171,8 +171,8 @@ const Agregar = () => {
   </Container>
 </Form>
 
-            </Col>
-           </Row>
+        </Col>
+              </Row>
             </Container>
           </Container>
       
