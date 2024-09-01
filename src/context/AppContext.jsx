@@ -10,6 +10,11 @@ export const AppProvider = ({ children }) => {
   const [productos, setProductos] = useState([]);
   const [favoritos, setFavoritos] = useState([]);
 
+  // Establece el usuario como null al cerrar sesión
+  const logout = () => {
+    setUser(null); // 
+  };
+
   // Función para agregar un producto
   const addProducto = (producto) => {
     setProductos((prevProductos) => [...prevProductos, producto]);
@@ -39,6 +44,7 @@ export const AppProvider = ({ children }) => {
       value={{
         user,
         setUser,
+        logout,
         productos,
         favoritos,
         addProducto,
