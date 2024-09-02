@@ -2,14 +2,14 @@ import React from 'react';
 import NavbarInicio from '../components/NavbarInicio';
 import { Container, Row, Col, Card, Button } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { useAppContext } from '../context/AppContext'; // Importa el contexto
+import { useAppContext, } from '../context/AppContext'; // Importa el contexto
 // Favoritos.jsx
 
 
-import { ProductoContext } from '../context/ProductoContext';
+import { ProductoContext, } from '../context/ProductoContext';
 
 const Favoritos = () => {
-  const { favoritos, removeFavorito } = useAppContext(); // Obtén los favoritos y la función para eliminar
+  const { favoritos, removeFavorito, user } = useAppContext(); // Obtén los favoritos y la función para eliminar
 
   return (
     <>
@@ -20,6 +20,8 @@ const Favoritos = () => {
 
         <Container>
           <h1 className="text-center">Tus Favoritos</h1>
+          <h3>Bienvenido</h3>
+          <h3>{user.email}</h3>
           {favoritos.length > 0 ? (
             <Row>
               {favoritos.map((producto) => (

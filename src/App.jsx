@@ -10,6 +10,7 @@ import Perfil from './view/Perfil';
 import Productos from './view/Productos';
 import { AppProvider } from './context/AppContext';
 
+
 const App = () => {
   return (
     <>
@@ -23,7 +24,6 @@ const App = () => {
         <Route path="/favoritos" element={<Favoritos/>} />
         <Route path="/perfil" element={<Perfil/>} />
         <Route path="*" element={<Home />} />
-      
       </Routes>
      </AppProvider>
     </>

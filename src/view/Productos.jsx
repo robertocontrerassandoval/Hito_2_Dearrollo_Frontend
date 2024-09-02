@@ -5,7 +5,7 @@ import { Container, Row, Col, Card, Button } from 'react-bootstrap';
 import { useAppContext } from '../context/AppContext';
 
 const Productos = () => {
-  const { productos, addFavorito, removeFavorito, favoritos } = useAppContext();
+  const { productos, addFavorito, removeFavorito, favoritos, user } = useAppContext();
 
   const handleAddToFavorites = (producto) => {
     if (favoritos.some(fav => fav.id === producto.id)) {
@@ -19,6 +19,8 @@ const Productos = () => {
     <Container>
       <NavbarInicio /> {/* Asegúrate de que el Navbar se muestra */}
       <h1 className="text-center">Nuestros Productos</h1>
+      <h3>Bienvenido</h3>
+      <h3>{user.email}</h3>
       <Row>
         {productos.length > 0 ? (
           productos.map((producto) => (
