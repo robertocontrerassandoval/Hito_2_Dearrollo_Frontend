@@ -4,8 +4,8 @@ import { Container, Row, Col, Card, Button } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { useAppContext } from '../context/AppContext'; // Importa el contexto
 // Favoritos.jsx
-import React, { useContext } from 'react';
-import { Card, Container, Row, Col } from 'react-bootstrap';
+
+
 import { ProductoContext } from '../context/ProductoContext';
 
 const Favoritos = () => {

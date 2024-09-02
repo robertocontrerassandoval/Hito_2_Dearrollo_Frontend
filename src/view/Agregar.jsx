@@ -2,6 +2,7 @@
 import React, { useState } from 'react';
 import { useAppContext } from '../context/AppContext';
 import { Container, Form, Button } from 'react-bootstrap';
+import NavbarInicio from '../components/NavbarInicio';
 
 const CrearProductoForm = () => {
   const { addProducto } = useAppContext();
@@ -40,6 +41,9 @@ const CrearProductoForm = () => {
   };
 
   return (
+    <>
+    
+    <NavbarInicio />
     <Container className="d-flex flex-column align-items-center">
       <h2>Crear Nuevo Producto</h2>
       <Form onSubmit={handleSubmit} className="w-50">
@@ -108,6 +112,8 @@ const CrearProductoForm = () => {
         </Button>
       </Form>
     </Container>
+    </>
+   
   );
 };
 
