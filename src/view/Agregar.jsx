@@ -1,87 +1,38 @@
+
 import React, { useState } from 'react';
-import Container from 'react-bootstrap/Container';
-import NavbarAgregar from '../components/NavbarAgregar';
-import Producto from '../components/CrearProducto'; // Asegúrate de que este es el componente correcto
-import { Col, Row, Form, Button } from 'react-bootstrap';
+import { useAppContext } from '../context/AppContext';
+import { Container, Form, Button } from 'react-bootstrap';
 
-const Agregar = () => {
-  const [productos, setProductos] = useState([]);
-  const [formData, setFormData] = useState({
-    titulo: '',
+const CrearProductoForm = () => {
+  const { addProducto } = useAppContext();
+  const [producto, setProducto] = useState({
+    id: '',
     imagen: '',
-    descripcion: '',
-    precio: '',
-    stock: ''
-  });
-
-  const [errors, setErrors] = useState({
     titulo: '',
-    imagen: '',
     descripcion: '',
     precio: '',
     stock: ''
   });
 
   const handleChange = (e) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value
-    });
+    const { name, value } = e.target;
+    setProducto((prevProducto) => ({
+      ...prevProducto,
+      [name]: value
+    }));
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-
-    // aqui validamos los datos del formulario
-    let hasErrors = false;
-    const newErrors = {
-      titulo: '',
-      imagen: '',
-      descripcion: '',
-      precio: '',
-      stock: ''
-    };
-
-    if (!formData.titulo.trim()) {
-      newErrors.titulo = 'El título es requerido.';
-      hasErrors = true;
-    }
-    if (!formData.imagen.trim()) {
-      newErrors.imagen = 'La imagen es requerida.';
-      hasErrors = true;
-    }
-    if (!formData.descripcion.trim()) {
-      newErrors.descripcion = 'La descripción es requerida.';
-      hasErrors = true;
-    }
-    if (!formData.precio || formData.precio <= 0) {
-      newErrors.precio = 'El precio debe ser un número positivo.';
-      hasErrors = true;
-    }
-    if (!formData.stock || formData.stock < 0) {
-      newErrors.stock = 'El stock debe ser un número entero no negativo.';
-      hasErrors = true;
-    }
-
-    if (hasErrors) {
-      setErrors(newErrors);
-      return;
-    }
-
-    // Si no encuebtra errores se genera el nuevo producto
-    setProductos([...productos, formData]);
-
-    // se Limpia el formulario y los mensajes de error
-    setFormData({
-      titulo: '',
-      imagen: '',
-      descripcion: '',
-      precio: '',
-      stock: ''
+    addProducto({
+      ...producto,
+      id: Date.now() // Genera un ID único
     });
-    setErrors({
-      titulo: '',
+    // Reinicia el formulario
+    setProducto({
+      id: '',
       imagen: '',
+      titulo: '',
       descripcion: '',
       precio: '',
       stock: ''
@@ -89,105 +40,76 @@ const Agregar = () => {
   };
 
   return (
-    <>
-      <Container className="container-agregar d-flex flex-column ">
-       
-          <Container>
-            <NavbarAgregar />
-          </Container>
-          <Container className=' container-form d-flex flex-columns' >
+    <Container className="d-flex flex-column align-items-center">
+      <h2>Crear Nuevo Producto</h2>
+      <Form onSubmit={handleSubmit} className="w-50">
+        <Form.Group controlId="formBasicTitulo">
+          <Form.Label>Título</Form.Label>
+          <Form.Control
+            type="text"
+            placeholder="Ingrese el título del producto"
+            name="titulo"
+            value={producto.titulo}
+            onChange={handleChange}
+            required
+          />
+        </Form.Group>
 
-          <Container className='d-flex justify-content-center align-items-center'>
-            <Container className="form-background d-flex flex-column justify-content-center align-items-center">
-              <Row style={{ width: '80%' }}>
-                <Col>
-                <Form className='form-agregar w-100' onSubmit={handleSubmit}>
-  <h2 className='text-center'>Crear nueva publicación</h2>
-  
-  <Form.Group className="mb-2" controlId="formBasicTitulo">
-    <Form.Label>Titulo</Form.Label>
-    <Form.Control
-      type="text"
-      name="titulo"
-      value={formData.titulo}
-      onChange={handleChange}
-      placeholder="Ingrese titulo"
-    />
-    {errors.titulo && <Form.Text className="text-danger">{errors.titulo}</Form.Text>}
-  </Form.Group>
+        <Form.Group controlId="formBasicDescripcion">
+          <Form.Label>Descripción</Form.Label>
+          <Form.Control
+            type="text"
+            placeholder="Ingrese la descripción del producto"
+            name="descripcion"
+            value={producto.descripcion}
+            onChange={handleChange}
+            required
+          />
+        </Form.Group>
 
-  <Form.Group className="mb-2" controlId="formBasicImagen">
-    <Form.Label>Imagen</Form.Label>
-    <Form.Control
-      type="text"
-      name="imagen"
-      value={formData.imagen}
-      onChange={handleChange}
-      placeholder="Ingrese imagen"
-    />
-    {errors.imagen && <Form.Text className="text-danger">{errors.imagen}</Form.Text>}
-  </Form.Group>
+        <Form.Group controlId="formBasicImagen">
+          <Form.Label>Imagen</Form.Label>
+          <Form.Control
+            type="text"
+            placeholder="URL de la imagen del producto"
+            name="imagen"
+            value={producto.imagen}
+            onChange={handleChange}
+            required
+          />
+        </Form.Group>
 
-  <Form.Group className="mb-2" controlId="formBasicDescripcion">
-    <Form.Label>Descripción</Form.Label>
-    <Form.Control
-      type="text"
-      name="descripcion"
-      value={formData.descripcion}
-      onChange={handleChange}
-      placeholder="Ingresar descripción"
-    />
-    {errors.descripcion && <Form.Text className="text-danger">{errors.descripcion}</Form.Text>}
-  </Form.Group>
+        <Form.Group controlId="formBasicPrecio">
+          <Form.Label>Precio</Form.Label>
+          <Form.Control
+            type="number"
+            placeholder="Ingrese el precio del producto"
+            name="precio"
+            value={producto.precio}
+            onChange={handleChange}
+            required
+          />
+        </Form.Group>
 
-  <Form.Group className="mb-2" controlId="formBasicPrecio">
-    <Form.Label>Precio</Form.Label>
-    <Form.Control
-      type="number"
-      name="precio"
-      value={formData.precio}
-      onChange={handleChange}
-      placeholder="Ingresar precio"
-    />
-    {errors.precio && <Form.Text className="text-danger">{errors.precio}</Form.Text>}
-  </Form.Group>
+        <Form.Group controlId="formBasicStock">
+          <Form.Label>Stock</Form.Label>
+          <Form.Control
+            type="number"
+            placeholder="Ingrese el stock del producto"
+            name="stock"
+            value={producto.stock}
+            onChange={handleChange}
+            required
+          />
+        </Form.Group>
 
-  <Form.Group className="mb-2" controlId="formBasicStock">
-    <Form.Label>Stock</Form.Label>
-    <Form.Control
-      type="number"
-      name="stock"
-      value={formData.stock}
-      onChange={handleChange}
-      placeholder="Ingresar stock"
-    />
-    {errors.stock && <Form.Text className="text-danger">{errors.stock}</Form.Text>}
-  </Form.Group>
-
-  <Container className='d-flex justify-content-center'>
-    <Button variant="primary" type="submit">
-      Agregar
-    </Button>
-  </Container>
-</Form>
-
-        </Col>
-              </Row>
-            </Container>
-          </Container>
-      
-        <Container className="flex-column justify-content-center align-items-center">
-          <Row>
-            <Col className='text-center'>
-              <h1 className='text-center'>Productos agregados</h1>
-            </Col>
-          </Row>
-          <Producto productos={productos} />
-        </Container>
-        </Container>
-      </Container>
-    </>
+        <Button variant="primary" type="submit" className="mt-3">
+          Agregar Producto
+        </Button>
+      </Form>
+    </Container>
   );
-}
+};
 
-export default Agregar;
+export default CrearProductoForm;
+
